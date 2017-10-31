@@ -16,9 +16,9 @@ class Submit_AJAX {
 	public function parse_ajax_scripts() {
 
 		wp_enqueue_style( 'parse-ajax', plugins_url( '/css/parse-ajax.css', __FILE__ ) );
-		wp_enqueue_script( 'parse-ajax', plugins_url( '/js/parse-ajax-submit.js', __FILE__ ), array( 'jquery' ) );
+		wp_register_script( 'parse-ajax', plugins_url( '/js/parse-ajax-submit.js', __FILE__ ), array( 'jquery' ) );
 		wp_localize_script(
-			'parse-ajax', 'Parse_Ajax', array(
+			'parse-ajax', 'ajax_object', array(
 				'ajaxurl'   => admin_url( 'admin-ajax.php' ),
 				'parse_ajax_nonce' => wp_create_nonce( 'parse-ajax-nonce' ),
 			)
@@ -51,6 +51,7 @@ class Submit_AJAX {
 	}
 
 	public function parse_ajax_form() {
+		wp_enqueue_script( 'parse-ajax' );
 	?>
 		<div class="form-signin">
 			<h2>Input Title</h2>
