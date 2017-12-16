@@ -1,13 +1,12 @@
-* {
-  box-sizing: border-box;
-}
+  #parse-ajax-section {
+    width: 66%;
+    margin: 0 auto;
+  }
+  .form-signin {
+    margin-top: 6rem;
+  }
 
-body {
-  padding-top: 1rem;
-  color: rgba(43, 108, 163, 1);
-}
-
-.wrapper {
+.shortcode-wrapper {
   max-width: 700px;
   margin: 0 auto;
   padding: 1em;
@@ -27,19 +26,11 @@ textarea:focus {
 input,
 textarea,
 button {
-  width: 100%;
+  /*width: 100%;*/
   border: 1px solid rgba(43, 108, 163, 1);
 }
 
-.wrapper > * {
-  padding: 1em;
-}
-
-form label {
-  display: block;
-}
-
-form p {
+/*form p {
   margin: 0;
 }
 
@@ -57,19 +48,4 @@ button:hover, button:focus {
   background: rgba(84, 255, 223, .8);
   border: 3px solid rgba(250, 128, 114,.71);
 }
-
-form {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 2fr 1fr;
-      grid-template-columns: 2fr 1fr;
-  grid-gap: 20px;
-}
-form p {
-  grid-column: 1 / 2;
-}
-
-.submit-wrapper {
-  grid-column: 2 / 3;
-  grid-row: 2;
-}
+*/

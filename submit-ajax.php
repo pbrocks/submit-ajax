@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Submit AJAX form
+ * Plugin Name: An AJAX Submit form
  */
 
 defined( 'ABSPATH' ) || die( 'File cannot be accessed directly' );
