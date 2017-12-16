@@ -71,20 +71,22 @@ class Submit_AJAX {
 				<form id="whatever-form">
 					<input type="hidden" name="hidden-number" id="hidden-number" value="1287">
 					<p>
-						<label for="number">Your name</label>
-						<input type="text" name="number" class="input-block-level" placeholder="Input Number">
+						<label for="client-name">Your name</label>
+						<input type="text" name="client-name" class="input-block-level" placeholder="Input Your Name">
 					</p>
 					<p>
-						<label for="title">Email</label>
-						<input type="text" required="required" name="title" class="input-block-level" placeholder="Input Title">
+						<label for="client-email">Email</label>
+						<!-- ToDo: Filter check for email address -->
+						<input type="email" required="required" name="client-email" class="input-block-level" placeholder="Input Your Email Address ( unfiltered )">
 					</p>
 					<p class="submit-wrapper">
-						<button class="btn btn-large" id="submit-parse">Submit Parse</button>
+						<button class="btn btn-large" id="submit-parse">Submit Form</button>
 					</p>
 				</form>
 			</div>
 		</div>
-		<div id="the-parse-response"></div>
+
+		<div id="the-parse-response"><div style="width: 77%; margin: 1rem auto; color: maroon;">This text will be replaced with the form data above. When you click <b><em>Submit Form</em></b>, the data is sent to AJAX, PHP prepares it, then ships it to Javascript, and JS will render in the browser here.</div></div>
 	</section>
 		<?php
 		if ( isset( $hidden ) ) {

@@ -17,7 +17,9 @@
 h3 {
   margin: 0;
 }
-
+#the-parse-response {
+  margin-top: 2rem;
+}
 input:focus,
 textarea:focus {
   border: 3px solid rgba(250, 128, 114,1);

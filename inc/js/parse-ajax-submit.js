@@ -9,8 +9,8 @@ jQuery(function ($) {
 
 					// vars
 					hidden: $('#hidden-number').val(),
-					title : $('input[name=title]').val(),
-					number: $('input[name=number]').val(),
+					name: $('input[name=client-name]').val(),
+					email : $('input[name=client-email]').val(),
 					file  : 'parse-ajax-submit.js',
 					stg   : ajax_object.parse_ajax_url,
 					notes   : ajax_object.get_notes,
