@@ -6,6 +6,9 @@ new Submit_AJAX();
 
 class Submit_AJAX {
 
+
+
+
 	public function __construct() {
 		add_shortcode( 'parse-ajax-form', array( $this, 'parse_ajax_form' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'parse_ajax_scripts' ) );
@@ -14,18 +17,20 @@ class Submit_AJAX {
 	}
 
 	public function parse_ajax_scripts() {
-
+		wp_enqueue_style( 'parse-select2', plugins_url( '/css/select2.min.css', __FILE__ ) );
 		wp_enqueue_style( 'parse-ajax', plugins_url( '/css/parse-ajax.css', __FILE__ ) );
+		wp_register_script( 'parse-select2', plugins_url( '/js/select2.min.js', __FILE__ ), array( 'jquery' ) );
 		wp_register_script( 'parse-ajax', plugins_url( '/js/parse-ajax-submit.js', __FILE__ ), array( 'jquery' ) );
 		wp_localize_script(
-			'parse-ajax', 'ajax_object', array(
+			'parse-ajax',
+			'ajax_object',
+			array(
 				'parse_ajax_ajaxurl'   => admin_url( 'admin-ajax.php' ),
 				'parse_ajax_nonce' => wp_create_nonce( 'parse-ajax-nonce' ),
 				'parse_ajax_url' => home_url( 'parse-ajax-nonce' ),
 				// 'get_notes' => json_encode( get_transient( 'notes' ) ),
 			)
 		);
-
 	}
 
 	public function parse_ajax_return_function() {
@@ -54,30 +59,38 @@ class Submit_AJAX {
 		echo '</pre>';
 		// IMPORTANT: don't forget to "exit"
 		exit;
-
 	}
 
 	public function parse_ajax_form() {
 		wp_enqueue_script( 'parse-ajax' );
-	?>
-	<style type="text/css">
+		wp_enqueue_script( 'parse-select2' );
+		?>
+		<style type="text/css">
 
 	</style>
 	<section id="parse-ajax-section">
 		<div class="form-signin">
-			<h2>Input Title</h2>
+			<h2>Input Select2</h2>
 
 			<div class="shortcode-wrapper">
 				<form id="whatever-form">
 					<input type="hidden" name="hidden-number" id="hidden-number" value="1287">
 					<p>
 						<label for="client-name">Your name</label>
-						<input type="text" name="client-name" class="input-block-level" placeholder="Input Your Name">
+						<input type="text" name="client-name" class="input-block-level" placeholder="Input Your Name" value="Fonzie">
 					</p>
+
 					<p>
 						<label for="client-email">Email</label>
 						<!-- ToDo: Filter check for email address -->
 						<input type="email" required="required" name="client-email" class="input-block-level" placeholder="Input Your Email Address ( unfiltered )">
+					</p>
+					<p>
+						<select multiple id="getCountry">
+							<option value="India">India</option>
+							<option value="Afghanistan">Afghanistan</option>
+							<option value="japan">japan</option>
+						</select>
 					</p>
 					<p class="submit-wrapper">
 						<button class="btn btn-large" id="submit-parse">Submit Form</button>
