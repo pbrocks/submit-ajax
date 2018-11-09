@@ -1,0 +1,53 @@
+  #guten-jax-section {
+    width: 66%;
+    margin: 0 auto;
+  }
+  .form-signin {
+    margin-top: 6rem;
+  }
+
+.shortcode-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1em;
+  background: aliceblue;
+  border: 1px solid rgba(43, 108, 163, .7);
+}
+
+h3 {
+  margin: 0;
+}
+#the-guten-response {
+  margin-top: 2rem;
+}
+input:focus,
+textarea:focus {
+  border: 3px solid rgba(250, 128, 114,1);
+}
+
+input,
+textarea,
+button {
+  /*width: 100%;*/
+  border: 1px solid rgba(43, 108, 163, 1);
+}
+
+/*form p {
+  margin: 0;
+}
+
+button,
+input,
+textarea {
+  padding: 1em;
+}
+
+button {
+  background: rgba(84, 255, 223, .2);
+  width: 100%;
+}
+button:hover, button:focus {
+  background: rgba(84, 255, 223, .8);
+  border: 3px solid rgba(250, 128, 114,.71);
+}
+*/
